@@ -10,20 +10,33 @@ class MainPage(BasePage):
     BUTTON_REGISTER = (By.LINK_TEXT, "Регистрация")
     BUTTON_LOGIN = (By.LINK_TEXT, "Авторизация")
     BUTTON_HOME = (By.LINK_TEXT, "Интернет магазин Opencart")
+    
+    DROPDOWN_TABLET = (By.LINK_TEXT, "Планшеты")
+    PRODUCT_TABLET = (By.LINK_TEXT, "Samsung Galaxy Tab 10.1")  
+
+    DROPDOWN_TELEPHONE_HTC = (By.LINK_TEXT, "Телефоны")
+    PRODUCT_TELEPHONE_HTC = (By.LINK_TEXT, "HTC Touch HD")  
 
     DROPDOWN_PC = (By.LINK_TEXT, "Компьютеры")
     LI_PC = (By.LINK_TEXT, "PC (0)")
 
-    
+
     PRODUCTS = [
         (By.CSS_SELECTOR, product.format(str(i), product_element)) 
         for i in range(1, 5)
     ]
-    
-    PRODUCTS_BUTTON = [
-        (By.CSS_SELECTOR, product.format(str(i), product_button)) 
+    PRODUCTS_BUTTON_BUY = [
+        (By.CSS_SELECTOR, product.format(str(i), product_button_buy)) 
         for i in range(1, 5)
     ]
+
+    PRODUCTS_BUTTON_FAVORITE = [
+        (By.CSS_SELECTOR, product.format(str(i), product_button_favorite)) 
+        for i in range(1, 5)
+    ]
+
+    LAST_INDEX = len(PRODUCTS) - 1
+
     
 
     
