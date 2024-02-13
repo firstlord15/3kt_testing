@@ -8,6 +8,8 @@ import time
 
 class ProductPage(BasePage):
     MAIN_PICTURE = (By.CSS_SELECTOR, "div.container:nth-child(4) div.row div.col-sm-12 div.row div.col-sm-8 ul.thumbnails li:nth-child(1) > a.thumbnail")
+
+    BUTTON_HOME = (By.LINK_TEXT, "Интернет магазин Opencart")
     
     BUTTON_FAVORITE = (By.XPATH, "//body/div[@id='product-product']/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]")
     BUTTON_BUY = (By.CSS_SELECTOR, "#button-cart")

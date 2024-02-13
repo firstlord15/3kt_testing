@@ -1,8 +1,9 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
+# from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 
 from random import randint
 import time
@@ -26,8 +27,9 @@ class BasePage:
     def click(self, element_locator):
         try:
             element = self.IsTuple(element_locator)
-            WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(element)).click()
+            WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(element))
             ActionChains(self.driver).move_to_element(element).click().perform()
+            time.sleep(2)
         except (Exception) as e:
             print(f"Ошибка при выполнении клика: {e}")
 
@@ -45,3 +47,4 @@ class BasePage:
     def _input(self, element, value):
         self.click(element)
         self.write(element, value)
+        time.sleep(2)
