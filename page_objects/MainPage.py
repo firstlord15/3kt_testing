@@ -27,6 +27,7 @@ class MainPage(BasePage):
         (By.CSS_SELECTOR, product.format(str(i), product_element))
         for i in range(1, 5)
     ]
+    
     PRODUCTS_BUTTON_BUY = [
         (By.CSS_SELECTOR, product.format(str(i), product_button_buy))
         for i in range(1, 5)
